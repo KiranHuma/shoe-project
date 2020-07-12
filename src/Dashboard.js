@@ -6,9 +6,7 @@ import Drawer from '@material-ui/core/Drawer';
 import Box from '@material-ui/core/Box';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import Badge from '@material-ui/core/Badge';
 import Container from '@material-ui/core/Container';
@@ -17,8 +15,6 @@ import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import { mainListItems } from './listItems';
-import { NavLink } from 'react-router-dom';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Button from '@material-ui/core/Button';
 import TouchAppIcon from '@material-ui/icons/TouchApp'
@@ -47,16 +43,16 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-  
-    
+
+
   },
-  btn:{
+  btn: {
     padding: '3px 6px',
-    width:'150px',
+    width: '150px',
     '& > *': {
       margin: theme.spacing(1),
     },
- 
+
   },
   toolbar: {
     paddingRight: 24, // keep right padding when drawer closed
@@ -180,35 +176,35 @@ export default function Dashboard() {
             <ChevronLeftIcon />
           </IconButton>
         </div>
-       
-        
+
+
         <Link >
-        <IconButton color="primary" aria-label="upload picture" component="span">
-          <ShoppingCartIcon fontSize="large"/>
-        </IconButton>
-        <Button variant="contained" color="primary" className={classes.btn} onClick={(e) => {
+          <IconButton color="primary" aria-label="upload picture" component="span">
+            <ShoppingCartIcon fontSize="large" />
+          </IconButton>
+          <Button variant="contained" color="primary" className={classes.btn} onClick={(e) => {
             e.preventDefault();
             window.location.href = "/"
           }}>Home</Button> </Link>
-          <Link>
+        <Link>
           <IconButton color="primary" aria-label="upload picture" component="span">
-          <LibraryAddIcon fontSize="large"/>
-        </IconButton>
+            <LibraryAddIcon fontSize="large" />
+          </IconButton>
           <Button variant="contained" color="primary" className={classes.btn} onClick={(e) => {
             e.preventDefault();
             window.location.href = "/Launch"
           }}>Launch</Button> </Link>
-           <Link>
-           <IconButton color="primary" aria-label="upload picture" component="span">
-          <TouchAppIcon fontSize="large"/>
-        </IconButton>
+        <Link>
+          <IconButton color="primary" aria-label="upload picture" component="span">
+            <TouchAppIcon fontSize="large" />
+          </IconButton>
           <Button variant="contained" color="primary" className={classes.btn} onClick={(e) => {
             e.preventDefault();
             window.location.href = "/product"
           }}>Product</Button> </Link>
 
 
-    
+
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
