@@ -9,16 +9,24 @@ import PeopleIcon from '@material-ui/icons/People';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import LayersIcon from '@material-ui/icons/Layers';
 import AssignmentIcon from '@material-ui/icons/Assignment';
+// import { Link } from 'react-router-dom';
+import Link from '@material-ui/core/Link';
+
 
 
 export const mainListItems = (
+  
   <div>
+    
     <ListItem button>
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
       <ListItemText primary="Dashboard" />
+      {/* <Link to="/"> Home </Link> */}
     </ListItem>
+   
+ 
     <ListItem button>
       <ListItemIcon>
         <ShoppingCartIcon />
@@ -46,7 +54,6 @@ export const mainListItems = (
     </ListItem>
   </div>
 );
-
 
 // export const secondaryListItems = (
 //   <div>

@@ -13,15 +13,18 @@ import IconButton from '@material-ui/core/IconButton';
 import Badge from '@material-ui/core/Badge';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import { mainListItems, secondaryListItems } from './listItems';
-import Chart from './Chart';
-import Deposits from './Deposits';
-import Orders from './Orders';
+import { mainListItems } from './listItems';
+import { NavLink } from 'react-router-dom';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import Button from '@material-ui/core/Button';
+
+
+
+
 import Routes from './Route.js';
 
 function Copyright() {
@@ -42,6 +45,43 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+  
+    
+  },
+  btn:{
+    // '& > *': {
+    //   margin: theme.spacing(1),
+    // },
+    // backgroundColor: 'rgba(52, 52, 52, 0.8)'
+    marginRight: 36,
+    backgroundColor:'white',
+    color:'Blue',
+    borderColor: 'white',
+   borderStyle:'solid',
+   fontsize: '100px',
+  //  fontFamily:'lucida grande',
+   fontWeight: '100',
+      width: '10%',
+    top: '70%',
+   height: '50%',
+   textAlignVertical:'top'
+    // position: 'absolute',
+    // height: '10%',
+    // width: '10%',
+    // top: '50%',
+    // left:'50%',
+    // fontsize: '2.6vmin',
+    // cursor: 'pointer',
+    // boxshadow: 'rgba(255, 255, 255, 0.05) 0px 3px 20px',
+    // borderwidth: 'initial',
+    // backgroundcolor: 'grey',
+    // color: 'white',
+    // borderstyle: 'none',
+    // bordercolor: 'initial',
+    // bordermage: 'initial',
+    // outline: 'none',
+    // borderstyle:none
+ 
   },
   toolbar: {
     paddingRight: 24, // keep right padding when drawer closed
@@ -144,7 +184,7 @@ export default function Dashboard() {
             <MenuIcon />
           </IconButton>
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-           Shoe Store
+            Shoe Store
           </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
@@ -166,15 +206,40 @@ export default function Dashboard() {
           </IconButton>
         </div>
         <Divider />
-        <List>{mainListItems}</List>
+        {/* <List>{mainListItems}</List> */}
+
+
         <Divider />
         {/* <List>{secondaryListItems}</List> */}
+        
+        <Link >
+        <IconButton color="primary" aria-label="upload picture" component="span">
+          <ShoppingCartIcon fontSize="large"/>
+        </IconButton>
+        <Button variant="contained" color="primary" onClick={(e) => {
+            e.preventDefault();
+            window.location.href = "/"
+          }}>Home</Button> </Link>
+          <Link>
+          <button type="button" onClick={(e) => {
+            e.preventDefault();
+            window.location.href = "/Launch"
+          }}>Launch</button> </Link>
+           <Link>
+          <button type="button" onClick={(e) => {
+            e.preventDefault();
+            window.location.href = "/product"
+          }}>Product</button> </Link>
+
+
+    
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-          <Routes />
+            <Routes />
+
             {/* Chart */}
             {/* <Grid item xs={12} md={8} lg={9}>
               <Paper className={fixedHeightPaper}>
