@@ -21,6 +21,8 @@ import { mainListItems } from './listItems';
 import { NavLink } from 'react-router-dom';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Button from '@material-ui/core/Button';
+import TouchAppIcon from '@material-ui/icons/TouchApp'
+import LibraryAddIcon from '@material-ui/icons/LibraryAdd'
 
 
 
@@ -49,38 +51,11 @@ const useStyles = makeStyles((theme) => ({
     
   },
   btn:{
-    // '& > *': {
-    //   margin: theme.spacing(1),
-    // },
-    // backgroundColor: 'rgba(52, 52, 52, 0.8)'
-    marginRight: 36,
-    backgroundColor:'white',
-    color:'Blue',
-    borderColor: 'white',
-   borderStyle:'solid',
-   fontsize: '100px',
-  //  fontFamily:'lucida grande',
-   fontWeight: '100',
-      width: '10%',
-    top: '70%',
-   height: '50%',
-   textAlignVertical:'top'
-    // position: 'absolute',
-    // height: '10%',
-    // width: '10%',
-    // top: '50%',
-    // left:'50%',
-    // fontsize: '2.6vmin',
-    // cursor: 'pointer',
-    // boxshadow: 'rgba(255, 255, 255, 0.05) 0px 3px 20px',
-    // borderwidth: 'initial',
-    // backgroundcolor: 'grey',
-    // color: 'white',
-    // borderstyle: 'none',
-    // bordercolor: 'initial',
-    // bordermage: 'initial',
-    // outline: 'none',
-    // borderstyle:none
+    padding: '3px 6px',
+    width:'150px',
+    '& > *': {
+      margin: theme.spacing(1),
+    },
  
   },
   toolbar: {
@@ -132,9 +107,9 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    width: theme.spacing(7),
+    width: theme.spacing(9),
     [theme.breakpoints.up('sm')]: {
-      width: theme.spacing(9),
+      width: theme.spacing(7),
     },
   },
   appBarSpacer: theme.mixins.toolbar,
@@ -205,31 +180,32 @@ export default function Dashboard() {
             <ChevronLeftIcon />
           </IconButton>
         </div>
-        <Divider />
-        {/* <List>{mainListItems}</List> */}
-
-
-        <Divider />
-        {/* <List>{secondaryListItems}</List> */}
+       
         
         <Link >
         <IconButton color="primary" aria-label="upload picture" component="span">
           <ShoppingCartIcon fontSize="large"/>
         </IconButton>
-        <Button variant="contained" color="primary" onClick={(e) => {
+        <Button variant="contained" color="primary" className={classes.btn} onClick={(e) => {
             e.preventDefault();
             window.location.href = "/"
           }}>Home</Button> </Link>
           <Link>
-          <button type="button" onClick={(e) => {
+          <IconButton color="primary" aria-label="upload picture" component="span">
+          <LibraryAddIcon fontSize="large"/>
+        </IconButton>
+          <Button variant="contained" color="primary" className={classes.btn} onClick={(e) => {
             e.preventDefault();
             window.location.href = "/Launch"
-          }}>Launch</button> </Link>
+          }}>Launch</Button> </Link>
            <Link>
-          <button type="button" onClick={(e) => {
+           <IconButton color="primary" aria-label="upload picture" component="span">
+          <TouchAppIcon fontSize="large"/>
+        </IconButton>
+          <Button variant="contained" color="primary" className={classes.btn} onClick={(e) => {
             e.preventDefault();
             window.location.href = "/product"
-          }}>Product</button> </Link>
+          }}>Product</Button> </Link>
 
 
     
