@@ -19,6 +19,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Button from '@material-ui/core/Button';
 import TouchAppIcon from '@material-ui/icons/TouchApp'
 import LibraryAddIcon from '@material-ui/icons/LibraryAdd'
+import Popper from '@material-ui/core/Popper';
 import Routes from './Route.js';
 
 
@@ -33,7 +34,7 @@ function Copyright() {
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
-      <br/>
+      
     </Typography>
   );
 }
@@ -131,6 +132,11 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
 
   },
+  alrtpaper: {
+    border: '1px solid',
+    padding: theme.spacing(4),
+    backgroundColor: theme.palette.background.paper,
+  },
  
   fixedHeight: {
     height: 240,
@@ -147,6 +153,15 @@ export default function Dashboard() {
     setOpen(false);
   };
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+  // for alert
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(anchorEl ? null : event.currentTarget);
+  };
+
+  const openn = Boolean(anchorEl);
+  const id = open ? 'simple-popper' : undefined;
 
   return (
     <div className={classes.root}>
@@ -167,8 +182,12 @@ export default function Dashboard() {
           </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
-              <NotificationsIcon />
+              <NotificationsIcon onClick={handleClick}/>
+             
             </Badge>
+            <Popper id={id} open={openn} anchorEl={anchorEl}>
+        <div className={classes.alrtpaper}>Welcome to Shoe Store.</div>
+      </Popper>
           </IconButton>
         </Toolbar>
       </AppBar>

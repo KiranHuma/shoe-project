@@ -4,9 +4,49 @@ import Home from './Components/Home';
 import About from './Components/About';
 import Product from './Components/Product';
 import ProductItem from './Components/ProductItem';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
 import NavBar from './Components/Navbar';
 
+const useStyles = makeStyles((theme) => ({
+ 
+  
+  paper: {
+
+    textAlign: 'center',
+    width: '400px',
+    height: '500px',
+    color:'#7659ff',
+  
+    
+   
+    boxshadow:'0 0 10px #463636',
+    marginLeft: '450px',
+    marginTop: '130px',
+
+    // display: 'inline-block',
+    // display: 'inline-block',
+  //   display: 'flex',
+  //   flexwrap: 'wrap',
+    // podisplay: flex;
+
+
+   
+    // backgroundColor: fade(theme.palette.common.white, 0.15),
+    '&:hover': {
+      transform: 'scale(1.1)',
+      color:'red',
+    }
+    //   backgroundColor: fade(theme.palette.common.white, 0.25),
+    // color: theme.palette.text.secondary,
+  },
+  title:{
+    color:'white',
+    textTransform:"uppercase"
+  }
+}));
 const RouteConfig = () => {
+  
   return (
     <Router>
    {/* <NavBar/> */}
@@ -24,10 +64,13 @@ const RouteConfig = () => {
   )
 }
 function NotFound() {
+  const classes = useStyles();
   return (
     <div>
-      <h1>NotFound</h1>
-      <p>Sorry your page was not found</p>
+      <h1 className={classes.paper} >The new designs are coming soon
+      <h2>Keep visiting our website</h2>
+      </h1>
+      
       <Outlet />
     </div>
   )
