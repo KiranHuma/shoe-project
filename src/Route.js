@@ -1,12 +1,12 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Outlet, Route, Link } from "react-router-dom";
 import Home from './Components/Home';
-import About from './Components/About';
+
 import Product from './Components/Product';
 import ProductItem from './Components/ProductItem';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-import NavBar from './Components/Navbar';
+
 
 const useStyles = makeStyles((theme) => ({
  
