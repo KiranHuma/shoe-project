@@ -19,21 +19,21 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Button from '@material-ui/core/Button';
 import TouchAppIcon from '@material-ui/icons/TouchApp'
 import LibraryAddIcon from '@material-ui/icons/LibraryAdd'
-
-
-
-
 import Routes from './Route.js';
+
+
+
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+        Shoe Store by KA
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
+      <br/>
     </Typography>
   );
 }
@@ -92,6 +92,9 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     whiteSpace: 'nowrap',
     width: drawerWidth,
+    // backgroundImage: 'url(./newshoes.png)',
+    backgroundColor: '#7659ff',
+
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
@@ -124,11 +127,16 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'auto',
     flexDirection: 'column',
   },
+  iconbtn:{
+    color: 'white',
+
+  },
+ 
   fixedHeight: {
     height: 240,
   },
 }));
-
+{/* <img className={classes.img} alt="complex" src="./shoespicsidebar.png" /> */ }
 export default function Dashboard() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
@@ -154,7 +162,7 @@ export default function Dashboard() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
+          <Typography component="h1" fontStyle="oblique" variant="h7" color="#7659ff" noWrap className={classes.title}>
             Shoe Store
           </Typography>
           <IconButton color="inherit">
@@ -165,12 +173,14 @@ export default function Dashboard() {
         </Toolbar>
       </AppBar>
       <Drawer
+
         variant="permanent"
         classes={{
           paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
         }}
         open={open}
       >
+        {/* <img className={classes.img} alt="complex" src="./shoespicsidebar.png" /> */}
         <div className={classes.toolbarIcon}>
           <IconButton onClick={handleDrawerClose}>
             <ChevronLeftIcon />
@@ -179,8 +189,8 @@ export default function Dashboard() {
 
 
         <Link >
-          <IconButton color="primary" aria-label="upload picture" component="span">
-            <ShoppingCartIcon fontSize="large" />
+          <IconButton   aria-label="upload picture" component="span">
+            <ShoppingCartIcon fontSize="large" className={classes.iconbtn} />
           </IconButton>
           <Button variant="contained" color="primary" className={classes.btn} onClick={(e) => {
             e.preventDefault();
@@ -188,7 +198,7 @@ export default function Dashboard() {
           }}>Home</Button> </Link>
         <Link>
           <IconButton color="primary" aria-label="upload picture" component="span">
-            <LibraryAddIcon fontSize="large" />
+            <LibraryAddIcon fontSize="large" className={classes.iconbtn}/>
           </IconButton>
           <Button variant="contained" color="primary" className={classes.btn} onClick={(e) => {
             e.preventDefault();
@@ -196,7 +206,7 @@ export default function Dashboard() {
           }}>Launch</Button> </Link>
         <Link>
           <IconButton color="primary" aria-label="upload picture" component="span">
-            <TouchAppIcon fontSize="large" />
+            <TouchAppIcon fontSize="large" className={classes.iconbtn}/>
           </IconButton>
           <Button variant="contained" color="primary" className={classes.btn} onClick={(e) => {
             e.preventDefault();
